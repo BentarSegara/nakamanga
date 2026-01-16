@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:nakamanga/theme.dart';
 
 class BottomBar extends StatelessWidget {
   const BottomBar({super.key});
@@ -9,7 +10,7 @@ class BottomBar extends StatelessWidget {
     return BottomAppBar(
       elevation: 0,
       padding: EdgeInsets.zero,
-      color: Color(0xFF0F172A),
+      color: Theme.of(context).colorScheme.surface,
       child: Container(
         padding: EdgeInsets.all(18),
         decoration: BoxDecoration(
@@ -31,14 +32,12 @@ class BottomBar extends StatelessWidget {
                   CupertinoIcons.home,
                   size: 25,
                   fontWeight: FontWeight.w500,
-                  color: Color(0xFF38BDF8),
+                  color: Theme.of(context).colorScheme.primary,
                 ),
                 Text(
                   "Home",
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xFF94A3B8),
+                  style: AppTextStyles.bottomBarLabel.copyWith(
+                    color: AppColors.textSecondary,
                   ),
                 ),
               ],
@@ -49,14 +48,12 @@ class BottomBar extends StatelessWidget {
                   CupertinoIcons.compass,
                   size: 25,
                   fontWeight: FontWeight.w500,
-                  color: Color(0xFF38BDF8),
+                  color: Theme.of(context).colorScheme.primary,
                 ),
                 Text(
                   "Explore",
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xFF94A3B8),
+                  style: AppTextStyles.bottomBarLabel.copyWith(
+                    color: AppColors.textSecondary,
                   ),
                 ),
               ],
@@ -67,14 +64,12 @@ class BottomBar extends StatelessWidget {
                   CupertinoIcons.book,
                   size: 25,
                   fontWeight: FontWeight.w500,
-                  color: Color(0xFF38BDF8),
+                  color: Theme.of(context).colorScheme.primary,
                 ),
                 Text(
                   "Library",
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xFF94A3B8),
+                  style: AppTextStyles.bottomBarLabel.copyWith(
+                    color: AppColors.textSecondary,
                   ),
                 ),
               ],
@@ -85,14 +80,12 @@ class BottomBar extends StatelessWidget {
                   CupertinoIcons.person,
                   size: 25,
                   fontWeight: FontWeight.w500,
-                  color: Color(0xFF38BDF8),
+                  color: Theme.of(context).colorScheme.primary,
                 ),
                 Text(
                   "Profile",
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xFF94A3B8),
+                  style: AppTextStyles.bottomBarLabel.copyWith(
+                    color: AppColors.textSecondary,
                   ),
                 ),
               ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nakamanga/pages/home_page.dart';
+import 'package:nakamanga/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Nakamanga',
       debugShowCheckedModeBanner: false,
+      theme: AppTheme.darkTheme,
+      // themeMode: ThemeMode.dark,
       home: const HomePage(),
     );
   }

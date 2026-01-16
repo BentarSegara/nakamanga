@@ -34,11 +34,9 @@ class LatestMangaCard extends StatelessWidget {
                   Text(
                     manga.title,
                     maxLines: 2,
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                    style: Theme.of(
+                      context,
+                    ).textTheme.titleLarge!.copyWith(fontSize: 16),
                   ),
                   Column(
                     spacing: 2,
@@ -47,15 +45,16 @@ class LatestMangaCard extends StatelessWidget {
                       Text(
                         "${manga.category} ${manga.genre}",
                         style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xFF94A3B8),
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).colorScheme.onSurfaceVariant,
                         ),
                       ),
                       Container(
                         width: 120,
                         height: 35,
                         decoration: BoxDecoration(
-                          color: Color(0xFF38BDF8),
+                          color: Theme.of(context).colorScheme.primary,
                           borderRadius: BorderRadius.circular(5),
                         ),
                         child: Center(
@@ -64,6 +63,7 @@ class LatestMangaCard extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
+                              color: Theme.of(context).colorScheme.onPrimary,
                             ),
                           ),
                         ),

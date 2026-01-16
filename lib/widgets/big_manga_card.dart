@@ -14,7 +14,7 @@ class BigMangaCard extends StatelessWidget {
         image: image != null
             ? DecorationImage(image: NetworkImage(image!), fit: BoxFit.cover)
             : null,
-        color: Color(0xFF1E293B),
+        color: Theme.of(context).colorScheme.surfaceContainer,
         borderRadius: BorderRadius.circular(15),
       ),
       child: child,

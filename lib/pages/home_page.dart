@@ -47,47 +47,41 @@ class _HomePageState extends State<HomePage> {
     final Size phoneSize = MediaQuery.of(context).size;
 
     return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: Color(0xFF0F172A),
+        backgroundColor: Theme.of(context).colorScheme.surface,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               "Selamat Pagi,",
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-                color: Colors.white,
-              ),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
-            Text(
-              "Segaara",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
+            Text("Segaara", style: Theme.of(context).textTheme.headlineMedium),
           ],
         ),
         actions: [
           IconButton(
-            style: IconButton.styleFrom(backgroundColor: Color(0xFF1E293B)),
+            style: IconButton.styleFrom(
+              backgroundColor: Theme.of(context).colorScheme.surfaceContainer,
+            ),
             onPressed: () => {},
             icon: Icon(
               CupertinoIcons.sun_max,
               fontWeight: FontWeight.w600,
-              color: Colors.white,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
           const SizedBox(width: 10),
           IconButton(
-            style: IconButton.styleFrom(backgroundColor: Color(0xFF1E293B)),
+            style: IconButton.styleFrom(
+              backgroundColor: Theme.of(context).colorScheme.surfaceContainer,
+            ),
             onPressed: () => {},
             icon: Icon(
               CupertinoIcons.bell,
               fontWeight: FontWeight.w600,
-              color: Colors.white,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
         ],
@@ -101,7 +95,7 @@ class _HomePageState extends State<HomePage> {
               child: Container(
                 height: 60,
                 decoration: BoxDecoration(
-                  color: Color(0xFF1E293B),
+                  color: Theme.of(context).colorScheme.surfaceContainer,
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: Padding(
@@ -110,19 +104,26 @@ class _HomePageState extends State<HomePage> {
                     spacing: 5,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Icon(CupertinoIcons.search, color: Color(0xFF38BDF8)),
+                      Icon(
+                        CupertinoIcons.search,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
                       Expanded(
                         flex: 1,
                         child: TextField(
                           controller: _textEditingController,
                           style: TextStyle(
-                            color: Colors.white.withValues(alpha: 0.5),
+                            color: Theme.of(
+                              context,
+                            ).colorScheme.onSurface.withValues(alpha: 0.5),
                           ),
                           cursorColor: Colors.black,
                           decoration: InputDecoration(
                             hintText: "Cari manga favoritmu",
                             hintStyle: TextStyle(
-                              color: Colors.white.withValues(alpha: 0.5),
+                              color: Theme.of(
+                                context,
+                              ).colorScheme.onSurface.withValues(alpha: 0.5),
                             ),
                             border: InputBorder.none,
                           ),
@@ -139,7 +140,7 @@ class _HomePageState extends State<HomePage> {
       ),
       bottomNavigationBar: BottomBar(),
       body: Container(
-        color: Color(0xFF0F172A),
+        color: Colors.transparent,
         child: ListView(
           children: [
             Section(
@@ -149,15 +150,11 @@ class _HomePageState extends State<HomePage> {
                   Icon(
                     CupertinoIcons.star,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF38BDF8),
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                   Text(
                     "Rating Teratas",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ],
               ),
@@ -188,15 +185,11 @@ class _HomePageState extends State<HomePage> {
                   Icon(
                     CupertinoIcons.flame,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF38BDF8),
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                   Text(
                     "Paling Popular",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ],
               ),
@@ -228,15 +221,11 @@ class _HomePageState extends State<HomePage> {
                   Icon(
                     CupertinoIcons.clock,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF38BDF8),
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                   Text(
                     "Update Terbaru",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ],
               ),
@@ -277,11 +266,11 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   spacing: 10,
                   children: [
-                    CircularProgressIndicator(color: Color(0xFF38BDF8)),
+                    CircularProgressIndicator(color: AppColors.primary),
                     Text(
                       "Memuat Data Manga",
-                      style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.3),
+                      style: AppTextStyles.bodyMedium.copyWith(
+                        color: AppColors.textPrimary.withValues(alpha: 0.3),
                       ),
                     ),
                   ],
@@ -299,12 +288,12 @@ class _HomePageState extends State<HomePage> {
                     Icon(
                       CupertinoIcons.wifi_slash,
                       size: 35,
-                      color: Colors.white.withValues(alpha: 0.2),
+                      color: AppColors.textPrimary.withValues(alpha: 0.2),
                     ),
                     Text(
                       "Gagal Memuat Data Manga",
-                      style: TextStyle(
-                        color: Colors.white.withValues(alpha: 0.3),
+                      style: AppTextStyles.bodyMedium.copyWith(
+                        color: AppColors.textPrimary.withValues(alpha: 0.3),
                       ),
                     ),
                     OutlinedButton(
@@ -318,7 +307,7 @@ class _HomePageState extends State<HomePage> {
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
-                          color: Colors.white.withValues(alpha: 0.3),
+                          color: AppColors.textPrimary.withValues(alpha: 0.3),
                         ),
                       ),
                     ),
@@ -339,15 +328,11 @@ class _HomePageState extends State<HomePage> {
                         Icon(
                           CupertinoIcons.star,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xFF38BDF8),
+                          color: AppColors.primary,
                         ),
                         Text(
                           "Rating Teratas",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
+                          style: AppTextStyles.sectionHeader,
                         ),
                       ],
                     ),
@@ -380,15 +365,11 @@ class _HomePageState extends State<HomePage> {
                         Icon(
                           CupertinoIcons.flame,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xFF38BDF8),
+                          color: AppColors.primary,
                         ),
                         Text(
                           "Paling Popular",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
+                          style: AppTextStyles.sectionHeader,
                         ),
                       ],
                     ),
@@ -422,15 +403,11 @@ class _HomePageState extends State<HomePage> {
                         Icon(
                           CupertinoIcons.clock,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xFF38BDF8),
+                          color: AppColors.primary,
                         ),
                         Text(
                           "Update Terbaru",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
+                          style: AppTextStyles.sectionHeader,
                         ),
                       ],
                     ),

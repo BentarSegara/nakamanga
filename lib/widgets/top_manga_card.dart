@@ -25,11 +25,7 @@ class TopMangaCard extends StatelessWidget {
             child: Center(
               child: Text(
                 "# ${manga.rank}",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xFFFBBF24),
-                ),
+                style: Theme.of(context).textTheme.labelSmall,
               ),
             ),
           ),
@@ -50,17 +46,14 @@ class TopMangaCard extends StatelessWidget {
                 Text(
                   manga.title,
                   maxLines: 1,
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 Text(
                   "${manga.genre} | Cahpter ${manga.chapter}",
                   style: TextStyle(
+                    fontSize: 13,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white.withValues(alpha: 0.5),
+                    color: Theme.of(context).colorScheme.onSurfaceVariant,
                   ),
                 ),
               ],

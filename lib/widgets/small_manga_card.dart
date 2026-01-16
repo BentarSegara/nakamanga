@@ -13,7 +13,7 @@ class SmallMangaCard extends StatelessWidget {
         height: phoneSize.height * 0.15,
         clipBehavior: Clip.antiAlias,
         decoration: BoxDecoration(
-          color: Color(0xFF1E293B),
+          color: Theme.of(context).colorScheme.surfaceContainer,
           borderRadius: BorderRadius.circular(12),
         ),
         child: child,

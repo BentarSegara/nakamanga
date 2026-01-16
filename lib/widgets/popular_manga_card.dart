@@ -29,13 +29,15 @@ class PopularMangaCard extends StatelessWidget {
                 spacing: 5,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(CupertinoIcons.eye, size: 20, color: Color(0xFF38BDF8)),
+                  Icon(
+                    CupertinoIcons.eye,
+                    size: 20,
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
                   Text(
                     manga.view,
-                    style: TextStyle(
-                      fontSize: 13,
+                    style: Theme.of(context).textTheme.titleSmall!.copyWith(
                       fontWeight: FontWeight.w600,
-                      color: Colors.white,
                     ),
                   ),
                 ],
@@ -59,17 +61,14 @@ class PopularMangaCard extends StatelessWidget {
                 Text(
                   manga.title,
                   maxLines: 1,
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 Text(
                   "${manga.genre} | Cahpter ${manga.chapter}",
                   style: TextStyle(
+                    fontSize: 13,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white.withValues(alpha: 0.5),
+                    color: Theme.of(context).colorScheme.onSurfaceVariant,
                   ),
                 ),
               ],
