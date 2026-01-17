@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nakamanga/types/popular_manga.dart';
 import 'package:nakamanga/widgets/big_manga_card.dart';
+import 'package:nakamanga/theme.dart';
 
 class PopularMangaCard extends StatelessWidget {
   final PopularManga manga;
@@ -21,7 +22,7 @@ class PopularMangaCard extends StatelessWidget {
             width: 75,
             height: 40,
             decoration: BoxDecoration(
-              color: Colors.black.withValues(alpha: 0.5),
+              color: AppColors.textPrimary.withValues(alpha: 0.5),
               borderRadius: BorderRadius.only(topRight: Radius.circular(15)),
             ),
             child: Center(
@@ -48,7 +49,7 @@ class PopularMangaCard extends StatelessWidget {
             width: phoneSize.width,
             padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
             decoration: BoxDecoration(
-              color: Colors.black.withValues(alpha: 0.5),
+              color: AppColors.textPrimary.withValues(alpha: 0.5),
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(15),
                 bottomRight: Radius.circular(15),

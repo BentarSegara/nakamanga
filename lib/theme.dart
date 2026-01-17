@@ -120,6 +120,7 @@ class AppTheme {
         secondary: AppColors.accent,
         onSecondary: AppColors.background,
         onSurfaceVariant: AppColors.textSecondary,
+        outline: AppColors.textSecondary,
         error: Colors.redAccent,
         onError: Colors.black,
         // background: AppColors.background, // Deprecated in Flutter 3.22+, but let's stick to safe usage or use surface
@@ -151,6 +152,7 @@ class AppTheme {
         secondary: DarkAppColors.accent,
         onSecondary: DarkAppColors.background,
         onSurfaceVariant: DarkAppColors.textSecondary,
+        outline: DarkAppColors.textSecondary,
         error: Colors.redAccent,
         onError: Colors.white,
         // background: AppColors.background, // Deprecated in Flutter 3.22+, but let's stick to safe usage or use surface

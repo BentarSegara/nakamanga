@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nakamanga/types/top_manga.dart';
 import 'package:nakamanga/widgets/big_manga_card.dart';
+import 'package:nakamanga/theme.dart';
 
 class TopMangaCard extends StatelessWidget {
   final TopManga manga;
@@ -19,7 +20,7 @@ class TopMangaCard extends StatelessWidget {
             width: 40,
             height: 40,
             decoration: BoxDecoration(
-              color: Colors.black.withValues(alpha: 0.5),
+              color: AppColors.textPrimary.withValues(alpha: 0.5),
               borderRadius: BorderRadius.only(topLeft: Radius.circular(15)),
             ),
             child: Center(
@@ -33,7 +34,7 @@ class TopMangaCard extends StatelessWidget {
             width: phoneSize.width,
             padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
             decoration: BoxDecoration(
-              color: Colors.black.withValues(alpha: 0.5),
+              color: AppColors.textPrimary.withValues(alpha: 0.5),
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(15),
                 bottomRight: Radius.circular(15),
