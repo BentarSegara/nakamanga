@@ -7,8 +7,8 @@ class MangaProvider with ChangeNotifier {
   ViewState _state = ViewState.loading;
   List<List<dynamic>>? _mangasInHomePage;
 
-  get state => _state;
-  get mangasInHomePage => _mangasInHomePage;
+  ViewState get state => _state;
+  List<List<dynamic>>? get mangasInHomePage => _mangasInHomePage;
 
   Future<void> fetchDataManga() async {
     _state = ViewState.loading;

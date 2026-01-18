@@ -1,10 +1,12 @@
+import 'dart:developer';
+
 import 'package:nakamanga/services/manga_service.dart';
 
 void main() async {
   try {
     final List<dynamic> dataManga = await MangaService.getManga('top');
-    print("Data berhasil diambil: $dataManga");
+    log("Data berhasil diambil: $dataManga", name: "success");
   } catch (e) {
-    print("$e");
+    log("$e", name: "error");
   }
 }

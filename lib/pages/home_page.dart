@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:nakamanga/components/bottom_bar.dart';
 import 'package:nakamanga/components/section.dart';
 import 'package:nakamanga/providers/manga_provider.dart';
 import 'package:nakamanga/providers/theme_provider.dart';
@@ -145,7 +144,6 @@ class _HomePageState extends State<HomePage> {
           ),
           actionsPadding: EdgeInsets.only(right: 15),
         ),
-        bottomNavigationBar: BottomBar(),
         body: Container(
           color: Colors.transparent,
           child: Consumer<MangaProvider>(
@@ -216,9 +214,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                 );
               } else {
-                var topMangas = mangaProvider.mangasInHomePage[0];
-                var popularMangas = mangaProvider.mangasInHomePage[1];
-                var latestMangas = mangaProvider.mangasInHomePage[2];
+                var topMangas = mangaProvider.mangasInHomePage![0];
+                var popularMangas = mangaProvider.mangasInHomePage![1];
+                var latestMangas = mangaProvider.mangasInHomePage![2];
 
                 return ListView(
                   children: [

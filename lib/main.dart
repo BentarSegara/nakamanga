@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nakamanga/pages/home_page.dart';
 import 'package:nakamanga/providers/theme_provider.dart';
+import 'package:nakamanga/router.dart';
 import 'package:nakamanga/theme.dart';
 import 'package:provider/provider.dart';
 
@@ -20,13 +20,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isLightMode = context.watch<ThemeProvider>().isLightMode;
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: router,
       title: 'Nakamanga',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: isLightMode ? ThemeMode.light : ThemeMode.dark,
-      home: const HomePage(),
     );
   }
 }
